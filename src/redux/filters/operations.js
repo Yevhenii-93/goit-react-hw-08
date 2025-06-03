@@ -14,15 +14,4 @@ const filtersSlice = createSlice({
 
 export const { changeFilter } = filtersSlice.actions;
 
-export const selectNameFilter = (state) => state.filters.name.toLowerCase();
-
-// export const selectNameFilter = createSelector(
-//   [selectContacts, selectFilter],
-//   (contacts, filterValue) => {
-//     return contacts.filter((contact) =>
-//       contact.name.toLowerCase().includes(filterValue)
-//     );
-//   }
-// );
-
 export default filtersSlice.reducer;
