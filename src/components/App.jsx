@@ -1,22 +1,19 @@
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { fetchContacts } from "../redux/contacts/operations";
+import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./Layout/Layout";
 
+const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
+const RegisterPage = lazy(() => import("../pages/RegisterPage/RegisterPage"));
+
 function App() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-
   return (
     <Layout>
-      <Routes>
-        <Route />
-        <Route />
-      </Routes>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/register" element={<RegisterPage />} />
+        </Routes>
+      </Suspense>
     </Layout>
   );
 }
