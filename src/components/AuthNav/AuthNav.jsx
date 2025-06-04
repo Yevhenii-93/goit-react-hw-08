@@ -7,7 +7,9 @@ export default function AuthNav() {
       <NavLink className={css.link} to="/register">
         Register
       </NavLink>
-      <NavLink className={css.link}>Log in</NavLink>
+      <NavLink className={css.link} to="/login">
+        Log in
+      </NavLink>
     </div>
   );
 }
