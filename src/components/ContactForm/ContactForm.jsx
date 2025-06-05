@@ -3,7 +3,8 @@ import { useId } from "react";
 import * as Yup from "yup";
 import css from "./ContactForm.module.css";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsOps";
+import { addContact } from "../../redux/contacts/operations";
+import Button from "../Button/Button";
 
 export default function ContactForm() {
   const dispatch = useDispatch();
@@ -56,7 +57,7 @@ export default function ContactForm() {
           <ErrorMessage component="span" name="number" />
         </div>
 
-        <button type="submit">Add contact</button>
+        <Button type="button" text="Create contact" />
       </Form>
     </Formik>
   );
