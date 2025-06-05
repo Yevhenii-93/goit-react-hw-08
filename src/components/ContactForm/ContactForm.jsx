@@ -57,7 +57,7 @@ export default function ContactForm() {
           <ErrorMessage component="span" name="number" />
         </div>
 
-        <Button type="button" text="Create contact" />
+        <Button type="submit" text="Create contact" />
       </Form>
     </Formik>
   );
