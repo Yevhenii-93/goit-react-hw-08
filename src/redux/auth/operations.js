@@ -18,3 +18,9 @@ export const logIn = createAsyncThunk("auth/login", async (values) => {
   setAuthHeader(`Bearer ${response.data.token} `);
   return response.data;
 });
+
+export const logOut = createAsyncThunk("auth/logout", async () => {
+  const response = await axios.post("users/logout");
+  setAuthHeader("");
+  return response.data;
+});
