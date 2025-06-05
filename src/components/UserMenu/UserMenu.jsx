@@ -14,7 +14,7 @@ export default function UserMenu() {
   return (
     <div className={css.wrapper}>
       <p className={css.username}>Welcome {user.name}</p>
-      <Button type="submit" text="Logout" />
+      <Button type="submit" text="Logout" onClick={handleLogOut} />
     </div>
   );
 }
