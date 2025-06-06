@@ -6,11 +6,14 @@ import { logOut } from "../../redux/auth/operations";
 
 export default function UserMenu() {
   const user = useSelector(selectUser);
+  console.log(user);
+
   const dispatch = useDispatch();
 
   const handleLogOut = () => {
     dispatch(logOut());
   };
+
   return (
     <div className={css.wrapper}>
       <p className={css.username}>Welcome {user.name}</p>
