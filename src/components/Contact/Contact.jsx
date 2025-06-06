@@ -4,10 +4,10 @@ import { useDispatch } from "react-redux";
 import Button from "../Button/Button";
 import { deleteContact } from "../../redux/contacts/operations";
 
-export default function Contact({ name, number }) {
+export default function Contact({ name, number, id }) {
   const dispatch = useDispatch();
 
-  const handleDelete = (id) => {
+  const handleDelete = () => {
     dispatch(deleteContact(id));
   };
 
