@@ -6,6 +6,7 @@ import { selectLoading } from "../../redux/contacts/selectors";
 import Loader from "../../components/Loader/Loader";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import { NavLink, Outlet } from "react-router-dom";
+import css from "./ContactPage.module.css";
 
 export default function ContactsPage() {
   const dispatch = useDispatch();
@@ -19,7 +20,9 @@ export default function ContactsPage() {
     <>
       <ContactForm />
       <h2>Contacts</h2>
-      <NavLink to="search">Search contact</NavLink>
+      <NavLink to="search" className={css.link}>
+        Search contact
+      </NavLink>
       <Outlet />
       {loading && <Loader />}
       <ContactList />
